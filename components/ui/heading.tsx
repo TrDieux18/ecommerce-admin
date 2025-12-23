@@ -7,7 +7,7 @@ export const Heading: React.FC<HeadingProps> = ({ title, description }) => {
     <div>
       <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
       {description && (
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="text-sm text-muted-foreground ">{description}</p>
       )}
     </div>
   );
