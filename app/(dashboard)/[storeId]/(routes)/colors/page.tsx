@@ -1,7 +1,8 @@
 import prismadb from "@/lib/prismadb";
 import { ColorClient } from "./components/client";
 import { ColorColumn } from "./components/columns";
-import { formatDate } from "@/utils/format";
+import { formatDate } from "@/lib/utils";
+
 
 const ColorsPage = async ({
    params,
