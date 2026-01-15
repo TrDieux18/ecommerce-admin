@@ -8,11 +8,7 @@ export async function GET(
    { params }: { params: Promise<{ billboardId: string }> }
 ) {
    try {
-      const { userId } = await auth();
 
-      if (!userId) {
-         return new NextResponse('Unauthenticated', { status: 401 })
-      }
 
       const { billboardId } = await params;
 
