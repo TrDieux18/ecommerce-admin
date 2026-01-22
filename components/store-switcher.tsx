@@ -7,7 +7,7 @@ import {
 import { useStoreModal } from "@/hooks/use-strore-modal";
 import { Store } from "@prisma/client";
 import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Check,
@@ -43,6 +43,11 @@ export default function StoreSwitcher({
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const formattedItems = items.map((item) => ({
     label: item.name,
@@ -57,6 +62,10 @@ export default function StoreSwitcher({
     setOpen(false);
     router.push(`/${store.value}`);
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

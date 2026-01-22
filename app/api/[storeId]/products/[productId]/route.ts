@@ -8,11 +8,6 @@ export async function GET(
    { params }: { params: Promise<{ productId: string }> }
 ) {
    try {
-      const { userId } = await auth();
-
-      if (!userId) {
-         return new NextResponse('Unauthenticated', { status: 401 })
-      }
 
       const { productId } = await params;
 
