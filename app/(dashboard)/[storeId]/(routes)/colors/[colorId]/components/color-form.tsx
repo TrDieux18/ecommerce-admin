@@ -29,7 +29,7 @@ import z from "zod";
 
 const formSchema = z.object({
   name: z.string().min(1),
-  value: z.string().min(8).regex(/^#/, {
+  value: z.string().min(3).regex(/^#/, {
     message: "String must be a valid hex code.",
   }),
 });
