@@ -13,7 +13,7 @@ export function MainNav({
 
   const routes = [
     {
-      href: `/${params.storeId}/overview`,
+      href: `/${params.storeId}`,
       label: "Overview",
       active: pathName === `/${params.storeId}`,
     },
@@ -68,7 +68,7 @@ export function MainNav({
               "text-sm font-medium transition-colors hover:text-primary",
               route.active
                 ? "text-black dark:text-white"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
           >
             {route.label}
